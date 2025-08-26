@@ -13,8 +13,9 @@ module.exports = {
     sourceType: 'module'
   },
   extends: [
-    'plugin:react/recommended',
-    'standard-with-typescript'
+    "plugin:react/recommended",
+    "standard-with-typescript",
+    "plugin:storybook/recommended"
   ],
   overrides: [
     {
