@@ -1,2 +1,3 @@
-export * from './Button'
-export * from './Icons'
+import "../core/styles/global.scss";
+
+export * from "../components";

@@ -18,10 +18,11 @@
     "jsx": "react-jsx",
     "skipLibCheck": true,
     "sourceMap": false,
-    "noEmit": false
+    "noEmit": false,
+    "emitDeclarationOnly": true,
   },
   "paths": {
-    "core/*": ["core/*"]
+    "@/*": ["./src/*"]
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist", "example", "**/*.test.tsx"]

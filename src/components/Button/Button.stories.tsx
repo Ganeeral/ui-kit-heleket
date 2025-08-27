@@ -1,18 +1,99 @@
+import { useState } from "react";
+
 import type { Meta, StoryFn } from "@storybook/react";
-import { Button, ButtonProps } from "./Button";
 
-export default {
-  title: "components/Button",
-  component: Button,
-  args: {
-    children: "Content",
+import Button from "./index";
+import type { TButtonProps } from "./types";
+
+const meta: Meta<typeof Button> = {
+  argTypes: {
+    align: {
+      control: { type: "select" },
+      description: "Выравнивание содержимого кнопки",
+      options: ["center", "left", "right"],
+    },
+    appearance: {
+      control: { type: "select" },
+      description: "Внешний вид кнопки",
+      options: [
+        "primary",
+        "custom",
+        "secondary",
+        "tertiary",
+        "stroked",
+        "outline",
+        "outline_small",
+        "footer",
+        "advertisement",
+        "special_green",
+        "special_red",
+      ],
+    },
+    children: {
+      control: { type: "text" },
+      description: "Текст или содержимое кнопки",
+    },
+    disabled: {
+      control: { type: "boolean" },
+      description: "Отключение кнопки",
+    },
+    fullWidth: {
+      control: { type: "boolean" },
+      description: "Кнопка на всю ширину контейнера",
+    },
+    isLoading: {
+      control: { type: "boolean" },
+      description: "Показывает индикатор загрузки",
+    },
+    leftIcon: {
+      control: { type: "object" },
+      description: "Иконка слева от текста кнопки",
+    },
+    rightIcon: {
+      control: { type: "object" },
+      description: "Иконка справа от текста кнопки",
+    },
+    size: {
+      control: { type: "select" },
+      description: "Размер кнопки",
+      options: ["s", "m", "l", "custom"],
+    },
+    tabIndex: {
+      control: { type: "number" },
+      description: "Управление табуляцией",
+    },
   },
-} as Meta<ButtonStoryProps>;
+  component: Button,
+  parameters: {
+    docs: {
+      description: {
+        component:
+          "Кнопка с поддержкой различных внешних видов, размеров и иконок.",
+      },
+    },
+  },
+  tags: ["autodocs"],
+  title: "Components/Button",
+};
 
-type ButtonStoryProps = Pick<ButtonProps, "children">;
+export default meta;
 
-export const ButtonStoryTemplate: StoryFn<ButtonStoryProps> = ({ ...args }) => (
-  <Button {...args} />
-);
+const Template: StoryFn<TButtonProps> = (args) => {
+  const [loading, setLoading] = useState(args.isLoading || false);
 
-ButtonStoryTemplate.storyName = "Button";
+  return (
+    <Button {...args} isLoading={loading} onClick={() => setLoading(!loading)}>
+      {args.children}
+    </Button>
+  );
+};
+
+export const Primary = Template.bind({});
+Primary.args = {
+  appearance: "primary",
+  children: "Primary Button",
+  size: "m",
+};
+
+Primary.storyName = "Основная кнопка";
+
