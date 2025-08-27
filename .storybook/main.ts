@@ -17,7 +17,7 @@ const config = {
     return mergeConfig(config, {
       resolve: {
         alias: {
-          src: resolve(__dirname, "../src"), // 👈 maps "src" to /src
+          src: resolve(__dirname, "../src"),
         },
       },
       css: {

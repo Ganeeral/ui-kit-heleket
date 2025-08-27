@@ -20,9 +20,9 @@
     "sourceMap": false,
     "noEmit": false,
     "emitDeclarationOnly": true,
-  },
-  "paths": {
-    "@/*": ["./src/*"]
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist", "example", "**/*.test.tsx"]

@@ -4,14 +4,10 @@ import dts from "vite-plugin-dts";
 import { libInjectCss } from "vite-plugin-lib-inject-css";
 import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
-import fs from "fs";
-import svg from '@neodx/svg/vite';
+import svg from "@neodx/svg/vite";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-const packageJson = JSON.parse(
-  fs.readFileSync(resolve(__dirname, "package.json"), "utf8")
-);
 
 export default defineConfig({
   plugins: [
@@ -30,50 +26,47 @@ export default defineConfig({
       resetColors: false,
       metadata: {
         path: "src/components/types/icon.types.ts",
-        runtime: {
-          viewBox: true,
-        },
+        runtime: { viewBox: true },
       },
     }),
   ],
+
+  resolve: {
+    alias: {
+      "@": resolve(__dirname, "src"),
+      "@styles": resolve(__dirname, "src/core/styles"),
+    },
+  },
+
   build: {
     lib: {
       entry: resolve(__dirname, "src/index.ts"),
       name: "YourUIKit",
       formats: ["es", "cjs"],
-      fileName: (format) => {
-        if (format === "es") {
-          return "index.esm.js";
-        }
-        if (format === "cjs") {
-          return "index.cjs.js";
-        }
-        return `index.${format}.js`;
-      },
+      fileName: (format) =>
+        format === "es" ? "index.esm.js" :
+        format === "cjs" ? "index.cjs.js" :
+        `index.${format}.js`,
     },
     rollupOptions: {
       external: ["react", "react-dom", "clsx"],
       output: {
-        globals: {
-          react: "React",
-          "react-dom": "ReactDOM",
-          clsx: "clsx",
-        },
+        globals: { react: "React", "react-dom": "ReactDOM", clsx: "clsx" },
         assetFileNames: "style.css",
-        sourcemap: true,
       },
     },
     sourcemap: true,
     minify: "terser",
     outDir: "dist",
   },
+
   css: {
-    modules: {
-      generateScopedName: "[name]__[local]___[hash:base64:5]",
-    },
     preprocessorOptions: {
       scss: {
-        api: "modern",
+        // Без начального слэша! Это частая ошибка.
+        includePaths: [resolve(__dirname, "src/core/styles")],
+        // Один общий вход: тянем агрегатор, который forward-ит всё
+        additionalData: `@use "@styles/mixins" as *;`,
       },
     },
   },
