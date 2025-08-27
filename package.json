@@ -29,7 +29,7 @@
     "url": "https://github.com/Ganeeral/ui-kit-heleket/issues"
   },
   "sideEffects": [
-    "./dist/esm/index.css"
+    "./dist/index.css"
   ],
   "type": "module",
   "homepage": "https://github.com/Ganeeral/ui-kit-heleket#readme",

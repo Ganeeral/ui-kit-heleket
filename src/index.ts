@@ -1,3 +1,3 @@
-import './core/styles/global.scss'
+import "./core/styles/global.scss";
 
-export * from './components'
+export * from "./components/index";
