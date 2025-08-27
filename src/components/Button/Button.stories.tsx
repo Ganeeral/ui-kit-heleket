@@ -4,6 +4,7 @@ import type { Meta, StoryFn } from "@storybook/react";
 
 import Button from "./index";
 import type { TButtonProps } from "./types";
+import { Icon } from "../icon";
 
 const meta: Meta<typeof Button> = {
   argTypes: {
@@ -82,7 +83,12 @@ const Template: StoryFn<TButtonProps> = (args) => {
   const [loading, setLoading] = useState(args.isLoading || false);
 
   return (
-    <Button {...args} isLoading={loading} onClick={() => setLoading(!loading)}>
+    <Button
+      {...args}
+      isLoading={loading}
+      onClick={() => setLoading(!loading)}
+      leftIcon={<Icon name="common/Apple" />}
+    >
       {args.children}
     </Button>
   );
@@ -96,4 +102,3 @@ Primary.args = {
 };
 
 Primary.storyName = "Основная кнопка";
-
