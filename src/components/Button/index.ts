@@ -1,4 +1,4 @@
-export { default } from "./button";
+export { default } from "./Button";
 export type {
   ButtonAppearance,
   ButtonBaseProps,
