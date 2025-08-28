@@ -1,3 +1,5 @@
+"use client";
+
 /** @module Button */
 
 import React, { cloneElement, isValidElement } from "react";
