@@ -1,5 +1,5 @@
 import "../core/styles/global.scss";
 
-export * from "./button";
-export * from "./icon";
-export * from "./typography";
+export * from "./button/index";
+export * from "./icon/index";
+export * from "./typography/index";
