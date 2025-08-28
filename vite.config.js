@@ -41,12 +41,14 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, "src/index.ts"),
-      name: "YourUIKit",
+      name: "ui-kit-heleket",
       formats: ["es", "cjs"],
       fileName: (format) =>
-        format === "es" ? "index.esm.js" :
-        format === "cjs" ? "index.cjs.js" :
-        `index.${format}.js`,
+        format === "es"
+          ? "index.esm.js"
+          : format === "cjs"
+            ? "index.cjs.js"
+            : `index.${format}.js`,
     },
     rollupOptions: {
       external: ["react", "react-dom", "clsx"],
@@ -63,9 +65,7 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        // Без начального слэша! Это частая ошибка.
         includePaths: [resolve(__dirname, "src/core/styles")],
-        // Один общий вход: тянем агрегатор, который forward-ит всё
         additionalData: `@use "@styles/mixins" as *;`,
       },
     },
