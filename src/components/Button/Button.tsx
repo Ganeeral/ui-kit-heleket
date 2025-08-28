@@ -33,7 +33,7 @@ import { Icon } from "../icon";
  * if `asChild` is true without valid children.
  */
 
-const Button = <E extends ElementType = "button">({
+export const Button = <E extends ElementType = "button">({
   as,
   children,
   appearance = "primary",
@@ -68,7 +68,7 @@ const Button = <E extends ElementType = "button">({
         [styles.loading]: isLoading,
         [styles.disabled]: isDisabled,
       },
-      className
+      className,
     ),
     ...(supportsDisabled
       ? { disabled: isDisabled }
@@ -118,5 +118,3 @@ const Button = <E extends ElementType = "button">({
 };
 
 Button.displayName = "Button";
-
-export default Button;
