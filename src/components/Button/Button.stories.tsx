@@ -2,9 +2,8 @@ import { useState } from "react";
 
 import type { Meta, StoryFn } from "@storybook/react";
 
-import Button from "./index";
+import { Button } from "./Button";
 import type { TButtonProps } from "./types";
-import { Icon } from "../icon";
 
 const meta: Meta<typeof Button> = {
   argTypes: {
@@ -83,12 +82,7 @@ const Template: StoryFn<TButtonProps> = (args) => {
   const [loading, setLoading] = useState(args.isLoading || false);
 
   return (
-    <Button
-      {...args}
-      isLoading={loading}
-      onClick={() => setLoading(!loading)}
-      leftIcon={<Icon name="common/Apple" />}
-    >
+    <Button {...args} isLoading={loading} onClick={() => setLoading(!loading)}>
       {args.children}
     </Button>
   );

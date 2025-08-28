@@ -20,7 +20,7 @@ export default defineConfig({
     }),
     svg({
       root: "src/core/assets/icons",
-      output: "src/sprites",
+      output: "src/components/icon/sprites",
       group: true,
       fileName: "{name}.{hash:8}.svg",
       resetColors: false,
