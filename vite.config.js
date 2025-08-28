@@ -61,7 +61,9 @@ export default defineConfig({
     minify: "terser",
     outDir: "dist",
   },
-
+  esbuild: {
+    banner: `"use client";`,
+  },
   css: {
     preprocessorOptions: {
       scss: {
