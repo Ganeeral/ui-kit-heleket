@@ -5,6 +5,7 @@ import { libInjectCss } from "vite-plugin-lib-inject-css";
 import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
 import svg from "@neodx/svg/vite";
+import { viteStaticCopy } from "vite-plugin-static-copy";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -28,6 +29,14 @@ export default defineConfig({
         path: "src/components/types/icon.types.ts",
         runtime: { viewBox: true },
       },
+    }),
+    viteStaticCopy({
+      targets: [
+        {
+          src: "src/components/icon/sprites/*.svg",
+          dest: "components/icon/sprites",
+        },
+      ],
     }),
   ],
 
