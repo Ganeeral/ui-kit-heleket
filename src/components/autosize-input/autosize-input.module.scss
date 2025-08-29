@@ -1,0 +1,57 @@
+.sizer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  height: 0;
+  overflow: scroll;
+  white-space: pre;
+}
+
+.inputWrapper {
+  display: flex;
+  position: relative;
+  line-height: 24px;
+  width: 100%;
+
+  &.limitWidth {
+    max-width: calc(100% - var(--sizerWidth));
+  }
+}
+
+.input {
+  min-width: 2px;
+  line-height: inherit;
+}
+
+.fakeInput {
+  display: flex;
+  align-items: center;
+  margin-inline-end: 2px;
+}
+
+.hiddenInput {
+  position: absolute;
+  opacity: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.placeholder {
+  display: flex;
+  align-items: center;
+  line-height: inherit;
+
+  // -2 is to remove extra stabilizing input width
+  margin-inline-start: -2px;
+  user-select: none;
+
+  &.tertiaryPlaceholder,
+  &.empty {
+    color: var(--text_tertiary);
+  }
+}
+
+.blockRight {
+  margin-left: auto;
+}
