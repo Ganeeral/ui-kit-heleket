@@ -12,7 +12,7 @@ const __dirname = dirname(__filename);
 
 export default defineConfig({
   plugins: [
-    react(),
+    react({ jsxRuntime: "automatic" }),
     libInjectCss(),
     dts({
       include: ["src/**/*"],
@@ -75,6 +75,8 @@ export default defineConfig({
     outDir: "dist",
   },
   esbuild: {
+    jsx: "automatic",
+    jsxImportSource: "react",
     banner: `"use client";`,
   },
   css: {

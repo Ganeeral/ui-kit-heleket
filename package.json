@@ -3,7 +3,7 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/Ganeeral"
   },
-  "version": "1.0.31",
+  "version": "1.0.34",
   "description": "",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -97,11 +97,11 @@
     "vite-plugin-lib-inject-css": "^2.2.2",
     "vitest": "^3.2.4"
   },
-  "dependencies": {
+  "peerDependencies": {
     "@neodx/svg": "^0.7.1",
     "clsx": "^2.1.1",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "react": "^18 || ^19.1.0",
+    "react-dom": "^18 || ^19.1.0",
     "rollup-plugin-preserve-directives": "^0.4.0",
     "rollup-plugin-svgsprite-generator": "^1.1.0",
     "vite-plugin-static-copy": "^3.1.2"
