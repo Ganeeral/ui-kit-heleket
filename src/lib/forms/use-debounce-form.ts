@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState } from "react";
 
-import { useInterval } from '../hooks/use-interval';
+import { useInterval } from "../../hooks/use-interval";
 
 export const useDebounceForm = () => {
   // Этот хук создан для дебоунса событий в форме

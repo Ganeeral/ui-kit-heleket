@@ -10,7 +10,7 @@ import React, {
 
 import styles from "./input.module.scss";
 import { variantsTypography } from "./input.types";
-import AutosizeInput from "../autosize-input/autosize-input";
+import { AutosizeInput } from "../autosize-input/autosize-input";
 
 import type { IInputProps } from "./input.types";
 import type { Variants } from "framer-motion";
@@ -90,7 +90,7 @@ function handleDecimalInput(value: string, decimal: number): string {
  *
  * @returns {JSX.Element} - Rendered Input component.
  */
-const Input = forwardRef<IInputRef, IInputProps>(
+export const Input = forwardRef<IInputRef, IInputProps>(
   (
     {
       className,
@@ -283,5 +283,3 @@ const Input = forwardRef<IInputRef, IInputProps>(
     );
   },
 );
-
-export default Input;

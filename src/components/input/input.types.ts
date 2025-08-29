@@ -1,10 +1,11 @@
-import type { IAutosizeInputProps } from '../autosize-input/autosize-input';
-import type { Variant } from '../../../dist/components/typography/types';
-import type { ChangeEvent, ReactNode, JSX } from 'react';
+import type { IAutosizeInputProps } from "../autosize-input/autosize-input";
+import type { Variant } from "../../../dist/components/typography/types";
+import type { ChangeEvent, ReactNode, JSX } from "react";
 
-export type Variants = 'normal' | 'compact';
+export type Variants = "normal" | "compact";
 
-export interface IInputProps extends Partial<React.InputHTMLAttributes<HTMLInputElement>> {
+export interface IInputProps
+  extends Partial<React.InputHTMLAttributes<HTMLInputElement>> {
   autofocus?: boolean;
   autosize?: boolean;
   autosizeProps?: IAutosizeInputProps;
@@ -31,22 +32,22 @@ interface IVariantsTypography {
   label: TypographyProps;
 }
 
-const errorBase: Pick<IVariantsTypography, 'error'> = {
+const errorBase: Pick<IVariantsTypography, "error"> = {
   error: {
-    variant: 'p3_r',
+    variant: "p3_r",
   },
 };
 
 export const variantsTypography: Record<Variants, IVariantsTypography> = {
   compact: {
     label: {
-      variant: 'p3_sb',
+      variant: "p3_sb",
     },
     ...errorBase,
   },
   normal: {
     label: {
-      variant: 'p3_sb',
+      variant: "p3_sb",
     },
     ...errorBase,
   },

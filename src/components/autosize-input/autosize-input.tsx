@@ -43,7 +43,7 @@ export interface IAutosizeInputProps {
 export type AutosizeInputProps = IAutosizeInputProps &
   React.InputHTMLAttributes<HTMLInputElement>;
 
-const AutosizeInput: React.FC<AutosizeInputProps> = ({
+export const AutosizeInput: React.FC<AutosizeInputProps> = ({
   minWidth,
   gap = 2,
   onAutosize,
@@ -267,5 +267,3 @@ const AutosizeInput: React.FC<AutosizeInputProps> = ({
     </>
   );
 };
-
-export default AutosizeInput;
