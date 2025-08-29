@@ -64,9 +64,14 @@ export default defineConfig({
             : `index.${format}.js`,
     },
     rollupOptions: {
-      external: ["react", "react-dom", "clsx"],
+      external: ["react", "react-dom", "clsx", "react/jsx-runtime"],
       output: {
-        globals: { react: "React", "react-dom": "ReactDOM", clsx: "clsx" },
+        globals: {
+          react: "React",
+          "react-dom": "ReactDOM",
+          clsx: "clsx",
+          "react/jsx-runtime": "ReactJsxRuntime",
+        },
         assetFileNames: "style.css",
       },
     },
