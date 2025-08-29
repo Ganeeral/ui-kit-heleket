@@ -53,7 +53,7 @@ export const Icon = ({
       }}
       {...props}
     >
-      <use href={`/icons/ui-kit/${filePath}#${iconName}`} />
+      <use href={`/ui-kit/sprites/${filePath}#${iconName}`} />
     </svg>
   );
 };

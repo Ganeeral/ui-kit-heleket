@@ -36,6 +36,10 @@ export default defineConfig({
           src: "src/components/icon/sprites/*.svg",
           dest: "components/icon/sprites",
         },
+        {
+          src: "src/scripts/**/*",
+          dest: "scripts",
+        },
       ],
     }),
   ],

@@ -3,13 +3,14 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/Ganeeral"
   },
-  "version": "1.0.20",
+  "version": "1.0.31",
   "description": "",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "files": [
-    "dist/**/*"
+    "dist/**/*",
+    "dist/components/icon/sprites"
   ],
   "scripts": {
     "build:types": "tsc",
